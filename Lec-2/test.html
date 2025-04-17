@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rotating Cylinder</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      /* outline: solid hsl(0 0% 0% / 10%); */
+    }
+
+    :root {
+      --radius: 50px;
+    }
+
+    body {
+      background: hsl(12, 59%, 56%);
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+    }
+
+    .scene {
+      width: 400px;
+      height: 400px;
+      perspective: 1200px;
+      position: relative;
+    }
+
+    .scene * {
+      transform-style: preserve-3d;
+    }
+
+    .cylinder {
+      position: relative;
+      background: hsla(12, 59%, 56%, 0.8);
+      height: 100%;
+      width: 100%;
+    }
+
+    .cylinder > div {
+      --cylinderWidth: 200px;
+      transform-origin: center;
+      position: absolute;
+      top: calc(50% - (var(--cylinderWidth) / 15 / 2));
+      left: calc(50% - (var(--cylinderWidth) / 2));
+      width: var(--cylinderWidth);
+      aspect-ratio: 15/1;
+      animation: rotate 2.5s linear infinite;
+    }
+
+    /* Equivalent to @for loop in SCSS */
+    .cylinder > div:nth-child(1) {
+      background-image: linear-gradient(90deg, transparent 0%, white 0% 8.3333%, transparent 8.3333%);
+      transform: rotateX(30deg) translateZ(30px);
+    }
+
+    .cylinder > div:nth-child(2) {
+      background-image: linear-gradient(90deg, transparent 8.3333%, white 8.3333% 16.6666%, transparent 16.6666%);
+      transform: rotateX(60deg) translateZ(30px);
+    }
+
+    .cylinder > div:nth-child(3) {
+      background-image: linear-gradient(90deg, transparent 16.6666%, white 16.6666% 25%, transparent 25%);
+      transform: rotateX(90deg) translateZ(30px);
+    }
+
+    .cylinder > div:nth-child(4) {
+      background-image: linear-gradient(90deg, transparent 25%, white 25% 33.3332%, transparent 33.3332%);
+      transform: rotateX(120deg) translateZ(30px);
+    }
+
+    .cylinder > div:nth-child(5) {
+      background-image: linear-gradient(90deg, transparent 33.3332%, white 33.3332% 41.6665%, transparent 41.6665%);
+      transform: rotateX(150deg) translateZ(30px);
+    }
+
+    .cylinder > div:nth-child(6) {
+      background-image: linear-gradient(90deg, transparent 41.6665%, white 41.6665% 50%, transparent 50%);
+      transform: rotateX(180deg) translateZ(30px);
+    }
+
+    .cylinder > div:nth-child(7) {
+      background-image: linear-gradient(90deg, transparent 50%, white 50% 58.3331%, transparent 58.3331%);
+      transform: rotateX(210deg) translateZ(30px);
+    }
+
+    .cylinder > div:nth-child(8) {
+      background-image: linear-gradient(90deg, transparent 58.3331%, white 58.3331% 66.6664%, transparent 66.6664%);
+      transform: rotateX(240deg) translateZ(30px);
+    }
+
+    .cylinder > div:nth-child(9) {
+      background-image: linear-gradient(90deg, transparent 66.6664%, white 66.6664% 74.9997%, transparent 74.9997%);
+      transform: rotateX(270deg) translateZ(30px);
+    }
+
+    .cylinder > div:nth-child(10) {
+      background-image: linear-gradient(90deg, transparent 74.9997%, white 74.9997% 83.333%, transparent 83.333%);
+      transform: rotateX(300deg) translateZ(30px);
+    }
+
+    .cylinder > div:nth-child(11) {
+      background-image: linear-gradient(90deg, transparent 83.333%, white 83.333% 91.6663%, transparent 91.6663%);
+      transform: rotateX(330deg) translateZ(30px);
+    }
+
+    .cylinder > div:nth-child(12) {
+      background-image: linear-gradient(90deg, transparent 91.6663%, white 91.6663% 100%, transparent 100%);
+      transform: rotateX(360deg) translateZ(30px);
+    }
+
+    @keyframes rotate {
+      from {
+        rotate: x 0deg;
+      }
+      to {
+        rotate: x 360deg;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <div class="cylinder">
+      <!-- 12 Divs for 12 segments -->
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</body>
+</html>
