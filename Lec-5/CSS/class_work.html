@@ -13,45 +13,43 @@
         }
         
         /* Main container box */
-        .main-box {
-            max-width: 900px;
+        .main{
+            max-width: 10000px;
             margin: 0 auto;
             padding: 15px;
             background-color: white;
-            border: 3px solid #0066cc;
+            border: 3px solid gray;
             border-radius: 8px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         
         /* Header box */
-        .header-box {
-            border: 2px solid #4CAF50;
+        .Top_BOX {
             border-radius: 6px;
             padding: 15px;
             margin-bottom: 20px;
-            background-color: #f9f9f9;
+            background-color: #0066cc;
         }
         
         /* Navigation box */
-        .nav-box {
-            border: 2px solid #FF9800;
+        .nav {
             border-radius: 6px;
             padding: 10px 15px;
             margin-bottom: 20px;
-            background-color: #fff8e1;
+            background-color: #61C295;
         }
         
         /* Content section boxes */
-        .section-box {
-            border: 2px solid #9C27B0;
+        .section {
+            border: 2px solid gray;
             border-radius: 6px;
             padding: 15px;
             margin-bottom: 20px;
-            background-color: #f3e5f5;
+            background-color: #eceff1;
         }
         
         /* Post box (nested inside section) */
-        .post-box {
+        .post {
             border: 2px solid #2196F3;
             border-radius: 5px;
             padding: 12px;
@@ -60,7 +58,7 @@
         }
         
         /* Footer box */
-        .footer-box {
+        .footer {
             border: 2px solid #607D8B;
             border-radius: 6px;
             padding: 10px;
@@ -70,11 +68,11 @@
         
         /* Text styling */
         h1 {
-            color: #0066cc;
+            color: white;
             margin-top: 0;
         }
         h2 {
-            color: #9C27B0;
+            color: white;
             margin-top: 0;
         }
         h3 {
@@ -87,7 +85,7 @@
             font-style: italic;
         }
         a {
-            color: #FF9800;
+            color: white;
             text-decoration: none;
             margin-right: 15px;
             font-weight: bold;
@@ -95,19 +93,27 @@
         a:hover {
             text-decoration: underline;
         }
+        .Welcom-Campus-Buzz
+        {
+            border: 2px solid #607D8B;
+            border-radius: 6px;
+            padding: 10px;
+            background-color: #2196F3;
+        }
     </style>
 </head>
 <body>
-    <!-- Main container box -->
-    <div class="main-box">
-        <!-- Header box -->
-        <div class="header-box">
+
+
+
+        <div class="Top_BOX">
             <h1>Student Life Portal</h1>
-            <p>Your guide spot for campus updates, events, and community rows.</p>
+            <p style="color: white;">Your guide spot for campus updates, events, and community rows.</p>
         </div>
         
-        <!-- Navigation box -->
-        <div class="nav-box">
+
+
+        <div class="nav">
             <a href="#">Home</a>
             <a href="#">Campus News</a>
             <a href="#">Events</a>
@@ -115,29 +121,44 @@
             <a href="#">Contact</a>
         </div>
         
-        <!-- Welcome section box -->
-        <div class="section-box">
-            <h2>Welcome, Students!</h2>
+        <div class="main">
+        <div class="section">
+            <div class="Welcom-Campus-Buzz">
+            <h2>Welcome, Students!</h2></div>
             <p>Explore the latest happenings on campus, discover new clubs, and never miss an event. This portal is built for students, by students.</p>
-            <div class="section-box">
-                <h2>Latest Campus Buzz</h2>
-                
-                <!-- Post box (nested inside section) -->
-                <div class="post-box">
-                    <h3>Spring Fest 2025 Announced!</h3>
-                    <p class="post-date">April 20, 2025 - By Campus Events Team</p>
-                    <p>Get ready for the music, food trucks, games, and more! The annual Spring Fest will be held on May 5th at the central quad. Don't miss out!</p>
-                </div>
+        </div>
+        <div class="section">
+            <div class="Welcom-Campus-Buzz">
+            <h2>Latest Campus Buzz</h2></div>
+
+            <div class="post">
+                <h3>Buildathon Dates Announced !!!!</h3>
+                <p class="post-date">April 22, 2025 - By Hackathon Club</p>
+                <p>Get Ready for our 2nd Buildathon it is going to be crazzier than the 1st Buildathon more code more Fun. <br> Mark the Dates on your Calender 9-10 of May. <br> Get set and Start making your team. Registeration Links will be sahred as soon as possible</p>
+            </div>
+            <div class="post">
+                <h3>Canteen Food 😋</h3>
+                <p class="post-date">April 22, 2025 - By VeggggBiryani</p>
+                <p>Today the sun has rised in the West. The Great Lord Sam has Brought Dal Wada in his tiffin.</p>
+            </div>
+            <div class="post">
+                <h3>Aura (-)</h3>
+                <p class="post-date">April 23, 2025 - By Aniket</p>
+                <p>The Greatest Rizzer of all time has Lost his Aura. Currently Having an Aura of (-6969). During the lecture He fell on his bummm 🤣 🤣 While trying to sit on the chair.</p>
             </div>
         </div>
+
+
+
+    </div>
         
-        <!-- Campus Buzz section box -->
-        
-        
-        <!-- Footer box -->
-        <div class="footer-box">
+
+
+
+
+        <div class="footer">
             <p>© 2025 Student Life Portal</p>
         </div>
-    </div>
+
 </body>
 </html>
