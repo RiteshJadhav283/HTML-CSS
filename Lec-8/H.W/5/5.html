@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+  <title>Shape Outside CSS Property</title>
+  <style>
+    body 
+    {
+        font-family: Arial, sans-serif;
+        padding: 40px;
+        line-height: 1.6;
+    }
+
+    .main 
+    {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .circle 
+    {
+        float: left;
+        width: 200px;
+        height: 200px;
+        margin-right: 30px;
+        background-color: #c0392b;
+        shape-outside: circle();
+        clip-path: circle();
+        -webkit-shape-outside: circle();
+        -webkit-clip-path: circle();
+    }
+
+    h1 
+    {
+        margin-top: 0;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <div class="circle"></div>
+
+        <h1>Shape Outside CSS Property</h1>
+        <p>Zero is a beautiful Number Not because it is round and cute (that could be an argument for it nevertheless) but because what it signifies. It marks the beginning of something. It marks the lowest something, or someone can go. It is the ultimate foundation to build anything upon.Over last several years, I’ve started several things from scratch and have failed at many (thus going back to zero), and I’ve realized there’s nothing more liberating than being at zero because the only way from zero is upwards. A very good friend once told me, “Don’t worry if you’ve failed. Rockets that touch the sky always launch from the ground.”</p>
+
+    </div>
+</body>
+</html>

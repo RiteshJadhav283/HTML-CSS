@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<head>
+  <title>Simple CSS Scroll Snap Gallery</title>
+  <style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #f0f0f0;
+        color: #333;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .gallery-container {
+        margin-bottom: 40px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        background: #fff;
+        border-radius: 6px;
+    }
+
+    .caption {
+        text-align: center;
+        margin-top: 10px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    .gallery {
+        height: 200px;
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+        border-radius: 4px;
+    }
+
+    .x-scroll {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+    }
+
+    .both-scroll {
+        display: grid;
+        grid-auto-flow: row;
+        overflow: auto;
+        scroll-snap-type: both mandatory;
+        max-height: 300px;
+    }
+
+    .proximity-x {
+        scroll-snap-type: x proximity;
+    }
+
+    .proximity-y {
+        scroll-snap-type: y proximity;
+    }
+
+    .both-proximity {
+        scroll-snap-type: both proximity;
+    }
+
+    .slide,
+    .slide-row .slide {
+        scroll-snap-align: start;
+        background: #4a90e2;
+        color: white;
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+        margin: 8px;
+    }
+
+    .gallery:not(.x-scroll):not(.both-scroll) .slide {
+        height: 100px;
+    }
+
+    .x-scroll .slide {
+        width: 150px;
+        height: 150px;
+        flex-shrink: 0;
+    }
+
+    .slide-row {
+        display: flex;
+    }
+
+    .slide-row .slide {
+        width: 120px;
+        height: 120px;
+        flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+    <h1>CSS Scroll Snap Demo</h1>
+
+    <div class="gallery-container">
+    <div class="gallery">
+        <div class="slide">1</div>
+        <div class="slide">2</div>
+        <div class="slide">3</div>
+        <div class="slide">4</div>
+    </div>
+    <div class="caption">scroll-snap-type: y mandatory</div>
+    </div>
+
+    <div class="gallery-container">
+    <div class="gallery x-scroll">
+        <div class="slide">1</div>
+        <div class="slide">2</div>
+        <div class="slide">3</div>
+        <div class="slide">4</div>
+    </div>
+    <div class="caption">scroll-snap-type: x mandatory</div>
+    </div>
+
+  <div class="gallery-container">
+    <div class="gallery both-scroll">
+        <div class="slide-row">
+            <div class="slide">1</div>
+            <div class="slide">2</div>
+            <div class="slide">3</div>
+            <div class="slide">4</div>
+        </div>
+        <div class="slide-row">
+            <div class="slide">5</div>
+            <div class="slide">6</div>
+            <div class="slide">7</div>
+            <div class="slide">8</div>
+        </div>
+    </div>
+    <div class="caption">scroll-snap-type: both mandatory</div>
+    </div>
+
+  <div class="gallery-container">
+    <div class="gallery x-scroll proximity-x">
+        <div class="slide">1</div>
+        <div class="slide">2</div>
+        <div class="slide">3</div>
+        <div class="slide">4</div>
+    </div>
+    <div class="caption">scroll-snap-type: x proximity</div>
+    </div>
+
+  <div class="gallery-container">
+    <div class="gallery proximity-y">
+        <div class="slide">1</div>
+        <div class="slide">2</div>
+        <div class="slide">3</div>
+        <div class="slide">4</div>
+    </div>
+    <div class="caption">scroll-snap-type: y proximity</div>
+    </div>
+
+  <div class="gallery-container">
+    <div class="gallery both-scroll both-proximity">
+      <div class="slide-row">
+            <div class="slide">1</div>
+            <div class="slide">2</div>
+            <div class="slide">3</div>
+            <div class="slide">4</div>
+        </div>
+        <div class="slide-row">
+            <div class="slide">5</div>
+            <div class="slide">6</div>
+            <div class="slide">7</div>
+            <div class="slide">8</div>
+        </div>
+    </div>
+    <div class="caption">scroll-snap-type: both proximity</div>
+    </div>
+
+</body>
+</html>

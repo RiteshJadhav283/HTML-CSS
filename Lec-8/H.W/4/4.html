@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+    <title>Static CSS Mask Effect</title>
+    <style>
+    body 
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #111;
+    }
+
+    .main_box 
+    {
+        display: flex;
+        gap: 20px;
+        border: 10px solid white;
+        padding: 10px;
+        background: #000;
+    }
+
+    .Original
+    {
+        width: 400px;
+        border: 4px solid white;
+    }
+
+    .Original img, .masked img 
+    {
+        width: 100%;
+        display: block;
+    }
+
+    .masked 
+    {
+        width: 400px;
+        border: 4px solid white;
+        -webkit-mask-image: linear-gradient(to top, transparent 0%, black 100%);
+        -webkit-mask-size: 100% 100%;
+        -webkit-mask-repeat: no-repeat;
+
+        mask-image: linear-gradient(to top, transparent 0%, black 100%);
+        mask-size: 100% 100%;
+        mask-repeat: no-repeat;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="main_box">
+        <div class="Original">
+            <img src="https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg" alt="Original">
+        </div>
+        <div class="masked">
+            <img src="https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg" alt="Masked">
+        </div>
+    </div>
+
+</body>
+</html>
