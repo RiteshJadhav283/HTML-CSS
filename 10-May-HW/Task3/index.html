@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Grid Tasks</title>
+        <style>
+            body 
+            {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background: #f5f5f5;
+            }
+            
+            header 
+            {
+                font-size: 50px;
+                text-align: center;
+                font-weight: bold;
+                margin-bottom: 30px;
+            }
+            
+            hr 
+            {
+                margin: 20px 0;
+                border: 0;
+                border-top: 1px solid #ccc;
+            }
+            
+            .Main_Box 
+            {
+                background-color: lightblue;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                padding: 20px;
+                margin: 20px 100px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            
+            h2 
+            {
+                margin-top: 0;
+                color: #333;
+                border-bottom: 2px solid #eee;
+                padding-bottom: 10px;
+            }
+            
+            .container 
+            {
+                display: grid;
+                gap: 15px;
+                padding: 15px;
+                background-color: white;
+                border-radius: 5px;
+            }
+            
+            .item 
+            {
+                background-color: darkcyan;
+                color: white;
+                padding: 15px;
+                text-align: center;
+                border-radius: 5px;
+                border: 1px solid darkblue;
+            }
+            
+            .portfolio-grid 
+            {
+                grid-template-areas:
+                    'header header'
+                    'sidebar content'
+                    'footer footer';
+                grid-template-columns: 200px 1fr;
+                grid-template-rows: 80px 1fr 50px;
+                height: 300px;
+            }
+            
+            .gallery-grid 
+            {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .blog-grid 
+            {
+                grid-template-areas:
+                    'header header'
+                    'content sidebar'
+                    'footer footer';
+                grid-template-columns: 3fr 1fr;
+                grid-template-rows: 80px 1fr 50px;
+                height: 250px;
+            }
+            
+            .product-grid 
+            {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+            
+            .dashboard-grid 
+            {
+                grid-template-areas:
+                    'header header header'
+                    'sidebar weather calendar'
+                    'sidebar news news';
+                grid-template-columns: 200px 1fr 1fr;
+                grid-template-rows: 60px 1fr 1fr;
+                height: 350px;
+            }
+            
+            .resume-grid 
+            {
+                grid-template-columns: 2fr 1fr;
+            }
+            
+            .menu-grid 
+            {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .news-grid 
+            {
+                grid-template-areas:
+                    'headline headline sidebar'
+                    'news1 news2 sidebar';
+                grid-template-columns: 1fr 1fr 200px;
+                grid-template-rows: 200px 150px;
+                height: 400px;
+            }
+            
+            .social-grid 
+            {
+                grid-template-areas: 'profile feed sidebar';
+                grid-template-columns: 200px 1fr 200px;
+                height: 300px;
+            }
+            
+            .creative-dashboard-grid 
+            {
+                grid-template-areas:
+                    'header header header'
+                    'stats stats calendar'
+                    'todo chart calendar'
+                    'finance finance weather';
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 60px 120px 200px 120px;
+                height: 500px;
+            }
+            
+            .widget-title 
+            {
+
+                font-size: 14px;
+                font-weight: bold;
+                margin-bottom: 8px;
+                text-align: left;
+            }
+            
+            .widget-content 
+            {
+                font-size: 12px;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <header>CSS Grid Tasks</header>
+        <hr>
+
+<!-- Task 1: Portfolio Page Layout -->
+        <div class="Main_Box">
+            <h2>Task 1: Portfolio Page Layout</h2>
+            <div class="container portfolio-grid">
+                <div style="grid-area: header;" class="item">Header</div>
+                <div style="grid-area: sidebar;" class="item">Sidebar</div>
+                <div style="grid-area: content;" class="item">Content</div>
+                <div style="grid-area: footer;" class="item">Footer</div>
+            </div>
+        </div>
+
+<!-- Task 2: Responsive Photo Gallery -->
+        <div class="Main_Box">
+            <h2>Task 2: Responsive Photo Gallery</h2>
+            <div class="container gallery-grid">
+                <div class="item">Photo 1</div>
+                <div class="item">Photo 2</div>
+                <div class="item">Photo 3</div>
+                <div class="item">Photo 4</div>
+                <div class="item">Photo 5</div>
+                <div class="item">Photo 6</div>
+            </div>
+        </div>
+
+<!-- Task 3: Simple Blog Layout -->
+        <div class="Main_Box">
+            <h2>Task 3: Simple Blog Layout</h2>
+            <div class="container blog-grid">
+                <div style="grid-area: header;" class="item">Header</div>
+                <div style="grid-area: content;" class="item">Main Content</div>
+                <div style="grid-area: sidebar;" class="item">Sidebar</div>
+                <div style="grid-area: footer;" class="item">Footer</div>
+            </div>
+        </div>
+
+<!-- Task 4: Responsive Product Grid -->
+        <div class="Main_Box">
+            <h2>Task 4: Responsive Product Grid</h2>
+            <div class="container product-grid">
+                <div class="item">Product 1</div>
+                <div class="item">Product 2</div>
+                <div class="item">Product 3</div>
+                <div class="item">Product 4</div>
+                <div class="item">Product 5</div>
+                <div class="item">Product 6</div>
+                <div class="item">Product 7</div>
+                <div class="item">Product 8</div>
+            </div>
+        </div>
+
+<!--Task 5: Personal Dashboard Layout-->
+        <div class="Main_Box">
+            <h2>Task 5: Personal Dashboard Layout</h2>
+            <div class="container dashboard-grid">
+                <div style="grid-area: header;" class="item">Header</div>
+                <div style="grid-area: sidebar;" class="item">Sidebar</div>
+                <div style="grid-area: weather;" class="item">Weather</div>
+                <div style="grid-area: calendar;" class="item">Calendar</div>
+                <div style="grid-area: news;" class="item">News Feed</div>
+            </div>
+        </div>
+
+<!--Task 6: CSS Grid Resume Layout-->
+        <div class="Main_Box">
+            <h2>Task 6: CSS Grid Resume Layout</h2>
+            <div class="container resume-grid">
+                <div class="item">
+                    <h3>Experience</h3>
+                    <p>Job 1</p>
+                    <p>Job 2</p>
+                </div>
+                <div class="item">
+                    <h3>Contact</h3>
+                    <p>Email</p>
+                    <p>Phone</p>
+                </div>
+            </div>
+        </div>
+
+<!--Task 7: CSS Grid for a Restaurant Menu-->
+        <div class="Main_Box">
+            <h2>Task 7: CSS Grid for a Restaurant Menu</h2>
+            <div class="container menu-grid">
+                <div>
+                    <h3>Starters</h3>
+                    <div class="item">Soup - $5</div>
+                    <div class="item">Salad - $7</div>
+                </div>
+                <div>
+                    <h3>Mains</h3>
+                    <div class="item">Steak - $20</div>
+                    <div class="item">Pasta - $15</div>
+                </div>
+                <div>
+                    <h3>Desserts</h3>
+                    <div class="item">Cake - $6</div>
+                    <div class="item">Ice Cream - $5</div>
+                </div>
+            </div>
+        </div>
+
+<!--Task 8: CSS Grid News Website Layout-->
+        <div class="Main_Box">
+            <h2>Task 8: CSS Grid News Website Layout</h2>
+            <div class="container news-grid">
+                <div style="grid-area: headline;" class="item">Headline News</div>
+                <div style="grid-area: sidebar;" class="item">Sidebar</div>
+                <div style="grid-area: news1;" class="item">News 1</div>
+                <div style="grid-area: news2;" class="item">News 2</div>
+            </div>
+        </div>
+
+<!--Task 9: Creative Dashboard with CSS -->
+        <div class="Main_Box">
+            <h2>Task 9: Creative Dashboard with CSS Grid</h2>
+            <p><strong>Goal:</strong> Create a <strong>creative dashboard</strong> layout for a fictional app (e.g., a weather app, to-do list, or financial tracker).</p>
+            
+            <div class="container creative-dashboard-grid">
+                <!-- Header -->
+                <div style="grid-area: header;" class="item">
+                    <div class="widget-title">Dashboard Header</div>
+                    <div class="widget-content">Welcome to your personalized dashboard</div>
+                </div>
+                
+                <!-- Stats Widget -->
+                <div style="grid-area: stats;" class="item">
+                    <div class="widget-title">Quick Stats</div>
+                    <div class="widget-content">
+                        <p>• 5 new messages</p>
+                        <p>• 3 pending tasks</p>
+                        <p>• 12 completed projects</p>
+                    </div>
+                </div>
+                
+                <!-- To-Do Widget -->
+                <div style="grid-area: todo;" class="item">
+                    <div class="widget-title">To-Do List</div>
+                    <div class="widget-content">
+                        <p>✓ Finish project proposal</p>
+                        <p>○ Call client</p>
+                        <p>○ Review analytics</p>
+                    </div>
+                </div>
+                
+                <!-- Chart Widget -->
+                <div style="grid-area: chart;" class="item">
+                    <div class="widget-title">Performance Chart</div>
+                    <div class="widget-content">[Chart visualization area]</div>
+                </div>
+                
+                <!-- Calendar Widget -->
+                <div style="grid-area: calendar;" class="item">
+                    <div class="widget-title">Calendar</div>
+                    <div class="widget-content">
+                        <p>• Meeting at 2pm</p>
+                        <p>• Deadline Friday</p>
+                        <p>• Team lunch</p>
+                    </div>
+                </div>
+                
+                <!-- Finance Widget -->
+                <div style="grid-area: finance;" class="item">
+                    <div class="widget-title">Financial Overview</div>
+                    <div class="widget-content">
+                        <p>• Revenue: $12,345</p>
+                        <p>• Expenses: $8,765</p>
+                        <p>• Profit: $3,580</p>
+                    </div>
+                </div>
+                
+                <!-- Weather Widget -->
+                <div style="grid-area: weather;" class="item">
+                    <div class="widget-title">Weather</div>
+                    <div class="widget-content">
+                        <p>• Sunny, 72°F</p>
+                        <p>• Humidity: 45%</p>
+                        <p>• Wind: 5mph NE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- Task 10: Social Media Layout Using CSS -->
+        <div class="Main_Box">
+            <h2>Task 9: Social Media Layout</h2>
+                <div class="container social-grid">
+                    <div style="grid-area: profile;" class="item">Profile</div>
+                    <div style="grid-area: feed;" class="item">News Feed</div>
+                    <div style="grid-area: sidebar;" class="item">Sidebar</div>
+                </div>
+            </div>
+    </body>
+</html>
