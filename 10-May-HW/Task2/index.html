@@ -117,6 +117,177 @@
                 height: 300px;
                 margin-left: 100px;
             }
+            
+            /* Exercise 5: Sidebar + Main Content */
+            .Ex5_container {
+                display: flex;
+                margin: 20px 0;
+                border: 1px solid #ccc;
+                height: 300px;
+            }
+            
+            .Ex5_Sidebar {
+                flex: 1;
+                background: #f0f0f0;
+                padding: 20px;
+            }
+            
+            .Ex5_Content {
+                flex: 3;
+                background: #e0e0e0;
+                padding: 20px;
+            }
+            
+            @media (max-width: 768px) {
+                .Ex5_container {
+                    flex-direction: column;
+                }
+                .Ex5_Sidebar, .Ex5_Content {
+                    flex: 1 0 auto;
+                    width: 100%;
+                }
+            }
+            
+            /* Exercise 6: Button Row */
+            .Ex6_button_row {
+                display: flex;
+                background: lightblue;
+                padding: 15px;
+                margin: 20px 0;
+                border-radius: 8px;
+            }
+            
+            .Ex6_button_row button {
+                padding: 10px 15px;
+                margin-right: 10px;
+                border: none;
+                border-radius: 4px;
+                background: darkcyan;
+                color: white;
+                cursor: pointer;
+            }
+            
+            .Ex6_button_row button:last-child {
+                margin-left: auto;
+                background: #ff6b6b;
+            }
+            
+            /* Exercise 7: Vertical Navigation */
+            .Ex7_vertical_nav {
+                display: flex;
+                flex-direction: column;
+                background: lightblue;
+                width: 200px;
+                padding: 10px;
+                margin: 20px 0;
+                border-radius: 8px;
+            }
+            
+            .Ex7_vertical_nav a {
+                padding: 10px;
+                text-decoration: none;
+                color: #333;
+                border-bottom: 1px solid #ccc;
+            }
+            
+            .Ex7_vertical_nav a:hover {
+                background: darkcyan;
+                color: white;
+            }
+            
+            /* Exercise 8: Flex Order */
+            .Ex8_container {
+                display: flex;
+                background: lightblue;
+                padding: 15px;
+                margin: 20px 0;
+                border-radius: 8px;
+            }
+            
+            .Ex8_box {
+                width: 100px;
+                height: 100px;
+                margin: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-weight: bold;
+            }
+            
+            .Ex8_box1 {
+                background: #ff6b6b;
+                order: 2;
+            }
+            
+            .Ex8_box2 {
+                background: #48dbfb;
+                order: 1;
+            }
+            
+            .Ex8_box3 {
+                background: #1dd1a1;
+                order: 3;
+            }
+            
+            /* Exercise 9: Flex Grow */
+            .Ex9_container {
+                display: flex;
+                background: lightblue;
+                padding: 15px;
+                margin: 20px 0;
+                border-radius: 8px;
+            }
+            
+            .Ex9_box {
+                height: 100px;
+                margin: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: darkcyan;
+                color: white;
+                flex: 1;
+            }
+            
+            .Ex9_box_special {
+                flex-grow: 2;
+                background: #ff6b6b;
+            }
+            
+            /* Exercise 10: Profile Layout */
+            .Ex10_profile {
+                display: flex;
+                flex-wrap: wrap;
+                background: lightblue;
+                padding: 20px;
+                margin: 20px 0;
+                border-radius: 8px;
+            }
+            
+            .Ex10_profile_img {
+                width: 150px;
+                height: 150px;
+                background: darkcyan;
+                border-radius: 50%;
+                margin-right: 20px;
+            }
+            
+            .Ex10_profile_info {
+                flex: 1;
+                min-width: 200px;
+            }
+            
+            @media (max-width: 600px) {
+                .Ex10_profile {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .Ex10_profile_img {
+                    margin-right: 0;
+                    margin-bottom: 20px;
+                }
+            }
         </style>
     </head>
     <body>
@@ -152,22 +323,71 @@
             <div class="Box1"><p>Hello How are you</p></div>
             <div class="Box2"><p>Wikis are powered by wiki software, also known as wiki engines.</p></div>
             <div class="Box3"><p>A wiki (/ˈwɪki/ ⓘ WICK-ee) is a form of hypertext publication on the internet which is collaboratively edited and managed by its audience directly through a web browser. </p></div>
-        </div>
+        </div><hr>
 
 <!-- 🔹 Exercise 5: Sidebar + Main Content -->
         <h3>🔹 Exercise 5: Sidebar + Main Content</h3>
-        <div class="Ex4_Silde">
-            <h4>Silde Bar</h4><hr>
-            <ul>
-                <li>Home</li>
-                <li>Contact</li>
-                <li>Order</li>
-                <li>Sell</li>
-            </ul>
-        </div>
-        <div class="Content_page">
-            <h3>Content Is here</h3>
-            <p>Hello Juys How are you</p>
+        <div class="Ex5_container">
+            <aside class="Ex5_Sidebar">
+                <h4>Sidebar (25%)</h4><hr>
+                <ul>
+                    <li>Home</li>
+                    <li>Contact</li>
+                    <li>Order</li>
+                    <li>Sell</li>
+                </ul>
+            </aside>
+            <main class="Ex5_Content">
+                <h3>Main Content (75%)</h3>
+                <p>This is the main content area that takes up 75% of the width. On smaller screens, the sidebar and content will stack vertically.</p>
+            </main>
+        </div><hr>
+
+<!-- 🔹 Exercise 6: Button Row with Right Aligned Button -->
+        <h3>🔹 Exercise 6: Button Row with Right Aligned Button</h3>
+        <div class="Ex6_button_row">
+            <button>Button 1</button>
+            <button>Button 2</button>
+            <button>Button 3</button>
+            <button>Right Button</button>
+        </div><hr>
+
+<!-- 🔹 Exercise 7: Vertical Flexbox Navigation -->
+        <h3>🔹 Exercise 7: Vertical Flexbox Navigation</h3>
+        <nav class="Ex7_vertical_nav">
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Blog</a>
+        </nav><hr>
+
+<!-- 🔹 Exercise 8: Flex Order Change -->
+        <h3>🔹 Exercise 8: Flex Order Change</h3>
+        <div class="Ex8_container">
+            <div class="Ex8_box Ex8_box1">Box 1 (order: 2)</div>
+            <div class="Ex8_box Ex8_box2">Box 2 (order: 1)</div>
+            <div class="Ex8_box Ex8_box3">Box 3 (order: 3)</div>
+        </div><hr>
+
+<!-- 🔹 Exercise 9: Grow One Box More Than Others -->
+        <h3>🔹 Exercise 9: Grow One Box More Than Others</h3>
+        <div class="Ex9_container">
+            <div class="Ex9_box">Box 1</div>
+            <div class="Ex9_box Ex9_box_special">Box 2 (flex-grow: 2)</div>
+            <div class="Ex9_box">Box 3</div>
+        </div><hr>
+
+<!-- 🔹 Exercise 10: Profile Layout -->
+        <h3>🔹 Exercise 10: Profile Layout</h3>
+        <div class="Ex10_profile">
+            <div class="Ex10_profile_img"></div>
+            <div class="Ex10_profile_info">
+                <h2>John Doe</h2>
+                <p>Web Developer</p>
+                <p>Email: john@example.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
         </div>
 
     </body>
